@@ -161,7 +161,7 @@ export class Extension extends Package {
    * The installed location the package. 
    */
   public get location(): string {
-    return path.normalize(`${this.installationPath}/${this.id.replace('/', '#')}`);
+    return path.normalize(`${this.installationPath}/${this.id.replace('/', '_')}`);
   }
   /**
    * The path to the installed npm package (internal to 'location')
