@@ -34,7 +34,6 @@ const npm_config = new Promise((r, j) => {
     npmlog.silent = () => { };
     npmlog.gauge.enable = () => { };
     npmlog.gauge.disable();
-    npm_1.load({
         loglevel: 'silent',
         logstream: new MemoryStream(''),
         registry: "https://registry.npmjs.org/"
@@ -146,7 +145,7 @@ class Extension extends Package {
      * The installed location the package.
      */
     get location() {
-        return path.normalize(`${this.installationPath}/${this.id.replace('/', '#')}`);
+        return path.normalize(`${this.installationPath}/${this.id.replace('/', '_')}`);
     }
     /**
      * The path to the installed npm package (internal to 'location')
