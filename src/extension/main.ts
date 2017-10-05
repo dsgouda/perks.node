@@ -539,7 +539,7 @@ export class ExtensionManager {
       return childProcess.fork(command[1], command.slice(2), { env: env, cwd: extension.modulePath, silent: true })
     }
     // spawn the command 
-    return childProcess.exec(extension.definition.scripts.start, { env: env, cwd: extension.modulePath, maxBuffer: 16 * 1024 * 1024 });
+    return childProcess.exec(extension.definition.scripts.start, { env: env, cwd: extension.modulePath, maxBuffer: 64 * 1024 * 1024 });
   }
 }
 
